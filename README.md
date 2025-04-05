@@ -87,4 +87,8 @@ Please remember FL Studio is not officially supported on Linux and there may be 
 
 If you have any corrections, tips, tricks, or expanded information for running FL Studio in wine I would very much appreciate issues/requests to enhance this guide. I will update as new information is available.
 
+#### WebView2 information
+- https://github.com/MicrosoftEdge/WebView2Feedback/issues/3127
+- https://appdb.winehq.org/objectManager.php?sClass=application&iId=20379
+
 
