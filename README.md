@@ -12,6 +12,7 @@ In Bottles, wine distributions are called Runners. There are quite a few to choo
 
 #### Notes: 
 - As of Apr 5th, 2025 I recommend using 10.1 if you use Kron4ek. Anything newer seems to cause broken links for the user directory.
+- (Apr 10th, 2025) I tested kron4ek 10.5 staging and it works so far without the problems I saw previously.
 - You may need/want to enable Pre-Release versions under General -> Advanced.
 
 ## DLL Components
