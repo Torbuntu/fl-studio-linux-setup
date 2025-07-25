@@ -11,9 +11,8 @@ Bottles on Flathub: https://flathub.org/apps/com.usebottles.bottles
 In Bottles, wine distributions are called Runners. There are quite a few to choose from. I have been using the Kron4ek builds with staging.
 
 #### Notes: 
-- As of Apr 5th, 2025 I recommend using 10.1 if you use Kron4ek. Anything newer seems to cause broken links for the user directory.
-- (Apr 10th, 2025) I tested kron4ek 10.5 staging and it works so far without the problems I saw previously.
-- You may need/want to enable Pre-Release versions under General -> Advanced.
+- (Jul, 2025) kron4ek-wine-10.12-staging causes FL Studio Mobile and Rack to create duplicate windows. Rolling down to kron4ek-wine-10.11-staging resolves this issue for me.
+- You may need/want to enable Pre-Release versions under General -> Advanced in order to get newer/other versions of wine runners.
 
 ## DLL Components
 I use DXVK and VKD3D in my bottles.
@@ -80,6 +79,11 @@ Your computer may warn you that bottles is not responding when you enter the val
 #### Notes: 
 - You may have to hide the sounds tab again after registering.
 
+## Next Steps
+It will be very beneficial to install [Flatseal](https://flathub.org/apps/com.github.tchx84.Flatseal). It is a graphical tool for modifying permissions and settings for Flatpak installed applications (such as Bottles). 
+
+Some things I did with it:
+- Adding more Filesystem entries such as `xdg-music` to be able to work more easily with content between different bottled versions of FL Studio.
 
 ## Other
 I hope this guide is helpful and can be expanded to assist folks in running FL Studio in linux based operating systems.
