@@ -7,6 +7,8 @@ Bottles: https://usebottles.com/
 
 Bottles on Flathub: https://flathub.org/apps/com.usebottles.bottles
 
+Flatseal: https://flathub.org/apps/com.github.tchx84.Flatseal
+
 ## Installing Runners
 In Bottles, wine distributions are called Runners. There are quite a few to choose from. I have been using the Kron4ek builds with staging.
 
