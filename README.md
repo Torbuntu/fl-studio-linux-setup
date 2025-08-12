@@ -10,11 +10,10 @@ Bottles on Flathub: https://flathub.org/apps/com.usebottles.bottles
 Flatseal: https://flathub.org/apps/com.github.tchx84.Flatseal
 
 ## Installing Runners
-In Bottles, wine distributions are called Runners. There are quite a few to choose from. I have been using the Kron4ek builds with staging.
+In Bottles, wine distributions are called Runners. There are quite a few to choose from. I have been using the Kron4ek builds with staging. You may need/want to enable Pre-Release versions under General -> Advanced in order to get newer/other versions of wine runners.
 
-#### Notes: 
-- (Jul, 2025) kron4ek-wine-10.12-staging causes FL Studio Mobile and Rack to create duplicate windows. Rolling down to kron4ek-wine-10.11-staging resolves this issue for me.
-- You may need/want to enable Pre-Release versions under General -> Advanced in order to get newer/other versions of wine runners.
+## Notes / Updates: 
+- (Jul, 2025) kron4ek-wine-10.12-staging causes FL Studio Mobile and Rack to create duplicate windows. This may affect other plugins as well. See [this issue](https://github.com/Torbuntu/fl-studio-linux-setup/issues/2). Rolling down to kron4ek-wine-10.11-staging resolves the duplicate/ghost window for me.
 
 ## DLL Components
 I use DXVK and VKD3D in my bottles.
@@ -35,7 +34,6 @@ In the Bottle's main Details page, click the three dot menu in the corner and Br
 ![image](https://github.com/user-attachments/assets/3eb52973-7e4a-43e5-92e9-b8bf471b97a6)
 
 Move the font file here `drive_c/windows/Fonts/` 
-
 
 #### Settings
 Confirm the Runner, DXVK and VKD3D settings are as expected.
@@ -84,8 +82,9 @@ Your computer may warn you that bottles is not responding when you enter the val
 ## Next Steps
 It will be very beneficial to install [Flatseal](https://flathub.org/apps/com.github.tchx84.Flatseal). It is a graphical tool for modifying permissions and settings for Flatpak installed applications (such as Bottles). 
 
-Some things I did with it:
-- Adding more Filesystem entries such as `xdg-music` to be able to work more easily with content between different bottled versions of FL Studio.
+Some things I did with Flatseal:
+- Adding Filesystem entry `xdg-music` to be able to work more easily with content between different bottled versions of FL Studio.
+- Adding Filesystem entry `xdg-data/applications` so that I can "Add Desktop Entry" for FL Studio in GNOME.
 
 ## Other
 I hope this guide is helpful and can be expanded to assist folks in running FL Studio in linux based operating systems.
