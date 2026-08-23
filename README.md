@@ -12,12 +12,12 @@ Flatseal: https://flathub.org/apps/com.github.tchx84.Flatseal
 Kron4ek wine releases: https://github.com/Kron4ek/Wine-Builds/releases 
 
 ## Notes / Updates:
+- (Aug, 2026) WARNING : FL Studio 26.1.4 has a new cert that breaks FL Studio as Wine is unable to verify with WinTrust. `WINTRUST_DefaultVerify returning 80096004`. For the meantime use FL Studio 26.1.3 or lower until Wine has the fix applied.
 - (Jan, 2026) WARNING : FL Cloud Plugins appears to have a memory leak.
-- (Jan, 2026) kron4ek-wine-11.0-amd64 now fixes both the duplicated plugin windows (mobile, mobile rack, etc) and also now has functioning WebView2 rendering so Sounds, Help manual and Gopher are all working within FL Studio.
 
 
 ## Installing Runners
-In Bottles, wine distributions are called Runners. There are quite a few to choose from. Many users have had the best success with `Kron4ek` or `Proton GE` in the Runners menu. You may need/want to enable Pre-Release versions under General -> Advanced in order to get newer/other versions of wine runners.
+In Bottles, wine distributions are called Runners. There are quite a few to choose from. Many users have had the best success with `Soda`, `Kron4ek` or `Proton GE` in the Runners menu. You may need/want to enable Pre-Release versions under General -> Advanced in order to get newer/other versions of wine runners.
 
 <img width="349" height="296" alt="Preferences" src="https://github.com/user-attachments/assets/5e06d028-29e4-45e5-afe2-ebadd2586520" />
 
@@ -27,7 +27,7 @@ In Bottles, wine distributions are called Runners. There are quite a few to choo
 I use DXVK and VKD3D in my bottles. They can be found in the `DLL Components` menu tab to the right of `Runners` and `Cache`
 
 ## First Bottle
-After getting familiar with the Bottles program, create a new bottle. Choose a name for the bottle and select a runner (ideally one we installed in the previous step `Installing Runners`. The following screenshot shows the drop down for Runners with `ge-proton10-25` selected. (Jan 2026) `kron4ek-wine-11.0-amd64` is now what I am using personally again.
+After getting familiar with the Bottles program, create a new bottle. Choose a name for the bottle and select a runner (ideally one we installed in the previous step `Installing Runners`. The following screenshot shows the drop down for Runners with `ge-proton10-25` selected.
 
 <img width="584" height="720" alt="Screenshot From 2025-12-04 17-18-46" src="https://github.com/user-attachments/assets/b6537b71-8de6-455d-98fd-9001556b6764" />
 
