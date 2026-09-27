@@ -16,6 +16,21 @@ Kron4ek wine releases: https://github.com/Kron4ek/Wine-Builds/releases
 - (Jan, 2026) WARNING : FL Cloud Plugins appears to have a memory leak.
 
 
+## Error Validating Certificate (FL Studio 26.1.4+)
+While waiting for the fix to land upstream in Wine (merge request here: https://gitlab.winehq.org/wine/wine/-/merge_requests/11824) we can move ahead with using a custom fork of Proton provided to us by KitsuneDev: https://github.com/KitsuneDev/daw-proton-ge/releases
+
+- Navigate to `~/.var/app/com.usebottles.bottles/data/bottles/runners/`.
+- Make a directory for our custom runner. I called mine `daw-ge-proton-11-6c` but as long as you know what the runner name is it doesn't need to be the same.
+- Enter that new directory.
+- Download the tar.gz from the [releases](https://github.com/KitsuneDev/daw-proton-ge/releases) page. 
+- Unzip and extract the contents of the tar.gz. (I used gunzip and then tar -xvf).
+- Copy all the directories from inside `DAW-GE-Proton11-6c/files/` up into the root directory of the directory we just created above.
+- We should now see `bin`, `lib`, and `share` in our new directory (along with the tar.gz and directory of the wine runner we downloaded. Which is fine).
+- Start bottles, and the runner will now appear as an option inside the bottle settings. 
+
+In my own testing I still see Edge WebView being stupid with leaving processes hanging around. So after installing FL Studio you can use a process monitor to hunt those down and kill them. I also do a `flatpak kill com.usebottles.bottles` and start fresh after installing anything.
+
+
 ## Installing Runners
 In Bottles, wine distributions are called Runners. There are quite a few to choose from. Many users have had the best success with `Soda`, `Kron4ek` or `Proton GE` in the Runners menu. You may need/want to enable Pre-Release versions under General -> Advanced in order to get newer/other versions of wine runners.
 
