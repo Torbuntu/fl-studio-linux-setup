@@ -1,0 +1,26 @@
+## Guide on how to run VST software in linux using wine/proton & Steam
+  This guide will not show you how to install wine or proton this is assuming you already have it as well as winetricks or protontricks
+  In this guide we will use Vienna Assistant as an example but this can be adapted to most other VST Software however this does not work with all software
+  Thank you to dkl65 on reddit for making a short guide on this
+1. Locate the .exe for Native Access (There are multiple methods of download so there isnt 1 place this could be)
+2. Add the .exe to steam
+3. Run the software once (if you are on a steam deck then go to the gear icon for the non steam game --> Preferences --> Compatibility --> proton Hotfix)
+4. Then locate your steam directory, go to ~/steamapps/compatdata and look for the folder that was modified the most recently (it will most likely say "Just Now")
+  4a. If you are unable to figure out which one is the correct one open winetricks / protontricks and check what string of numbers is next to Vienna Assistant.exe that will be the folder you need to open
+5. This next part is tedious but copy everything pertaining to native access from the simulated C drive you used to access the .exe and place it into the compatdata C drive in same locations
+ (i.e. /drive_c1/Program Files/Vienna Assistant copy the folder and place it in /drive_c2/Program Files/ so that everything is the same)
+6. Once you have moved everything related to Vienna Assistant over to the compatdata C Drive now it is time to add it to steam
+  (NOTE: do not add the new Vienna Assistant.exe to steam as a non-steam-game because it will create a new C drive when you run it. Instead you need to update the non steam game you previously used)
+7. To do this, open the properties window of the .exe you already added to steam and update the "Target" and "Start In" sections, replacing the file path in both to the location of your new .exe you created inside the compatdata folder and the folder it is found in respectivley
+  (NOTE: In the "Target" section keep quotation marks around the file path to your new .exe, for example the new target should look something like "/home/deck/.steam/steam/steamapps/compatdata/2298585504/pfx/drive_c/Program Files/Vienna Assistant/Vienna Assistant.exe" if you are on a steamdeck)
+8. Once you have finished you should still be able to launch the new .exe within steam
+9. Now open winetricks / protontricks and select Vienna Assistant.exe
+10. Select "Select the default wine prefix" and click OK.
+11. Select "Run a Wine cmd shell" and click OK.
+12. Navigate to the program's folder using cd "Program Files/Native Instruments/Vienna Assistant/" (Note you can copy and paste into this command line using the middle mouse button. If you need to press backspace to fix a type then hold Ctrl while pressing backspace)
+13. Run the program from the cmd window by typing "Vienna Assistant.exe"
+14. Go through the program as normal until it opens your web browser and asks you to login
+15.Press F12 on the keyboard to open the browser console. You should see something like "tpcitcgapp://callback?code=blahblahblah&scope=offline+screen_name+openid+friends&state=blahblahblah"
+16. Go back to the cmd terminal and press enter to pop up a new line
+17. press the up arrow key on your keyboard to bring up the "Vienna Assistant.exe" and paste the callback in quotation marks right after
+18. Hit enter and it should work!
