@@ -12,12 +12,15 @@ Flatseal: https://flathub.org/apps/com.github.tchx84.Flatseal
 Kron4ek wine releases: https://github.com/Kron4ek/Wine-Builds/releases 
 
 ## Notes / Updates:
+- (Nov, 2026) NOTICE: FL Studio 26.1.4 and up are now working with Wine 11.21 and higher (including runners that are built from that version and up). It was fixed with this [merge to wine](https://gitlab.winehq.org/wine/wine/-/merge_requests/11824). Known working version are `kron4ek-wine-11.21`. As of now (Nov 21st) Soda does not have the patch.
 - (Aug, 2026) WARNING : FL Studio 26.1.4 has a new cert that breaks FL Studio as Wine is unable to verify with WinTrust. `WINTRUST_DefaultVerify returning 80096004`. For the meantime use FL Studio 26.1.3 or lower until Wine has the fix applied.
 - (Jan, 2026) WARNING : FL Cloud Plugins appears to have a memory leak.
 
 
 ## Error Validating Certificate (FL Studio 26.1.4+)
 While waiting for the fix to land upstream in Wine (merge request here: https://gitlab.winehq.org/wine/wine/-/merge_requests/11824) we can move ahead with using a custom fork of Proton provided to us by KitsuneDev: https://github.com/KitsuneDev/daw-proton-ge/releases
+
+Note: Kron4ek wine 11.21 and up now have the working version of Wine.
 
 - Navigate to `~/.var/app/com.usebottles.bottles/data/bottles/runners/`.
 - Make a directory for our custom runner. I called mine `daw-ge-proton-11-6c` but as long as you know what the runner name is it doesn't need to be the same.
@@ -48,8 +51,10 @@ After getting familiar with the Bottles program, create a new bottle. Choose a n
 
 
 #### Dependencies
-In the new bottle scroll down to Options to find Dependencies and once inside install the "allfonts" dependency. This will pull in many common fonts.
+In the new bottle scroll down to Options to find Dependencies and once inside install the "allfonts" dependency. This will pull in many common fonts. 
 ![image](https://github.com/user-attachments/assets/e0144902-aa32-484d-8892-1da281674a91)
+
+Fonts will be required in order for some plugins or features to function properly.
 
 We will want to add the msgothic font file. This will allow rendering musical notation symbols such as sharps and flats. We can download that file from here https://github.com/FSKiller/Microsoft-Fonts/blob/main/msgothic.ttc
 
