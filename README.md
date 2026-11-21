@@ -90,7 +90,11 @@ For me, there are some goofy "FAIL" messages regarding midi input.
 
 ![image](https://github.com/user-attachments/assets/079cec4c-9be3-4bee-b15b-8bd02a3531db)
 
-I just disable these.
+I just disable these. The same failure can also show up as the error `There is not enough memory available for this task... (MIDI)`, and FL Studio may open Image-Line's [knowledge base article](https://support.image-line.com/action/knowledgebase?ans=601) about it. The failing entries are PipeWire's virtual MIDI ports, not hardware, so it is safe to switch them off:
+
+1. Open `Options -> MIDI Settings`.
+2. In the `Input` list, select each entry marked `FAIL` (in the screenshot above, `PipeWire-System - input` and `PipeWire-RT-Event - input`).
+3. Turn off the `Enable` button below the list for each of them.
 
 If everything seems good enough, we can register! I login with credentials. On GNOME we can set up a desktop file so the web redirect works for login, but this is easier.
 
