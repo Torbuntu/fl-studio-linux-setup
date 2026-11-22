@@ -12,15 +12,19 @@ Flatseal: https://flathub.org/apps/com.github.tchx84.Flatseal
 Kron4ek wine releases: https://github.com/Kron4ek/Wine-Builds/releases 
 
 ## Notes / Updates:
-- (Nov, 2026) NOTICE: FL Studio 26.1.4 and up are now working with Wine 11.21 and higher (including runners that are built from that version and up). It was fixed with this [merge to wine](https://gitlab.winehq.org/wine/wine/-/merge_requests/11824). Known working version are `kron4ek-wine-11.21`. As of now (Nov 21st) Soda does not have the patch.
-- (Aug, 2026) WARNING : FL Studio 26.1.4 has a new cert that breaks FL Studio as Wine is unable to verify with WinTrust. `WINTRUST_DefaultVerify returning 80096004`. For the meantime use FL Studio 26.1.3 or lower until Wine has the fix applied.
+- (Nov, 2026) NOTICE: FL Studio 26.1.4 and up are now working with Wine 11.21 and higher (including runners that are built from that version and up). It was fixed with this [merge to wine](https://gitlab.winehq.org/wine/wine/-/merge_requests/11824). Known working version: `kron4ek-wine-11.21-amd64`, which Bottles offers under Kron4ek in the Runners menu. As of now (Nov 21st) Soda does not have the patch. See [Error Validating Certificate](#error-validating-certificate-fl-studio-2614).
+- (Aug, 2026) WARNING : FL Studio 26.1.4 has a new cert that breaks FL Studio as Wine is unable to verify with WinTrust. `WINTRUST_DefaultVerify returning 80096004`. Fixed in Wine 11.21, see the notice above.
 - (Jan, 2026) WARNING : FL Cloud Plugins appears to have a memory leak.
 
 
 ## Error Validating Certificate (FL Studio 26.1.4+)
-While waiting for the fix to land upstream in Wine (merge request here: https://gitlab.winehq.org/wine/wine/-/merge_requests/11824) we can move ahead with using a custom fork of Proton provided to us by KitsuneDev: https://github.com/KitsuneDev/daw-proton-ge/releases
+On Wine older than 11.21, FL Studio 26.1.4 and up install fine but stop at startup with "The validity of the program could not be verified. Please reinstall it and try again." (`WINTRUST_DefaultVerify returning 80096004` in the log). Wine fixed this in 11.21 (merge request here: https://gitlab.winehq.org/wine/wine/-/merge_requests/11824), so use a runner built on Wine 11.21 or newer:
 
-Note: Kron4ek wine 11.21 and up now have the working version of Wine.
+- In the Runners menu, download `kron4ek-wine-11.21-amd64` (or newer) under Kron4ek (see [Installing Runners](#installing-runners)).
+- Select it when creating the bottle (see [First Bottle](#first-bottle)). If FL Studio is already installed in a bottle, switch that bottle's Runner in its Settings instead.
+
+### Alternative: KitsuneDev's DAW Proton fork
+Before the fix landed in Wine, we used a custom fork of Proton provided to us by KitsuneDev, and it still works: https://github.com/KitsuneDev/daw-proton-ge/releases
 
 - Navigate to `~/.var/app/com.usebottles.bottles/data/bottles/runners/`.
 - Make a directory for our custom runner. I called mine `daw-ge-proton-11-6c` but as long as you know what the runner name is it doesn't need to be the same.
